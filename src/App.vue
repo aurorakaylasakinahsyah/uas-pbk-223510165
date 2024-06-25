@@ -2,35 +2,20 @@
   <q-layout view="hHh lpR fFf">
     <q-header class="bg-gradient">
       <q-toolbar>
-        <q-toolbar-title style="font-weight: 900; margin-left:25px;" class="text-black">🌤️SPC</q-toolbar-title>
-        <q-toolbar-title style="font-weight: 600;margin-right:100px;font-family:Verdana, Geneva, Tahoma, sans-serif; color:black" class="text">Si Pemburu Cuaca</q-toolbar-title>
-
-
-
-        <div class="current-time text-black">{{ formattedCurrentTime }}</div>
+        <q-toolbar-title class="text-black toolbar-title">🌤️SPC</q-toolbar-title>
+        <q-toolbar-title class="text toolbar-title">Si Pemburu Cuaca</q-toolbar-title>
+        <div class="current-time text-black bordered">{{ formattedCurrentTime }}</div>
 
         <q-btn-group>
           <q-btn label="Aurora Kayla S" color="pink" class="bg-pink">
             <q-menu auto-close>
               <q-list style="min-width: 200px">
-                <q-item style="color: black; font-weight: 500;"
-                  to="/tugas/1"
-                  href="https://kayla-projectcv.netlify.app/"
-                  >Tugas Pertemuan 1</q-item>
-                <q-item style="color: black; font-weight: 500;" to="/tugas/2" href="https://github.com/aurorakaylasakinahsyah/T2-PBK-Aurora"
-                  >Tugas Pertemuan 2</q-item>
-                <q-item style="color: black; font-weight: 500;" to="/tugas/3" href="https://aurorakayla.netlify.app/"
-                  >Tugas Pertemuan 3</q-item>
-                <q-item style="color: black; font-weight: 500;" to="/tugas/4" href="https://aurorakayla-sakinahsyah-t4-prakpbk.vercel.app/"
-                  >Tugas Pertemuan 4</q-item>
-                <q-item style="color: black; font-weight: 500;"
-                  to="/tugas/5"
-                  href="https://t5-pbk-kayla.vercel.app/"
-                  >Tugas Pertemuan 5</q-item>
-                <q-item style="color: black; font-weight: 500;"
-                  to="/tugas/6"
-                  href="https://comfy-bubblegum-3de90b.netlify.app/"
-                  >Tugas Pertemuan 6</q-item>
+                <q-item style="color: black; font-weight: 500;" to="/tugas/1" href="https://kayla-projectcv.netlify.app/">Tugas Pertemuan 1</q-item>
+                <q-item style="color: black; font-weight: 500;" to="/tugas/2" href="https://github.com/aurorakaylasakinahsyah/T2-PBK-Aurora">Tugas Pertemuan 2</q-item>
+                <q-item style="color: black; font-weight: 500;" to="/tugas/3" href="https://aurorakayla.netlify.app/">Tugas Pertemuan 3</q-item>
+                <q-item style="color: black; font-weight: 500;" to="/tugas/4" href="https://aurorakayla-sakinahsyah-t4-prakpbk.vercel.app/">Tugas Pertemuan 4</q-item>
+                <q-item style="color: black; font-weight: 500;" to="/tugas/5" href="https://t5-pbk-kayla.vercel.app/">Tugas Pertemuan 5</q-item>
+                <q-item style="color: black; font-weight: 500;" to="/tugas/6" href="https://comfy-bubblegum-3de90b.netlify.app/">Tugas Pertemuan 6</q-item>
               </q-list>
             </q-menu>
           </q-btn>
@@ -39,10 +24,10 @@
     </q-header>
 
     <q-page-container>
-      <q-page class="flex flex-column">
+      <q-page class="center center-column">
         <div class="background-image"></div>
         <div class="weather-container">
-          <q-card class="q-pa-sm glass-card flex-grow">
+          <q-card class="q-pa-sm glass-card center-grow animated-card">
             <q-card-section>
               <div class="text-h6 text-center text-black">
                 <h6 style="font-weight:600">Mau buru cuaca kota apa?</h6>
@@ -50,13 +35,7 @@
             </q-card-section>
 
             <q-card-section>
-              <q-input
-                v-model="location"
-                outlined
-                placeholder="Ketik disini dong!"
-                class="input-field"
-                @keyup.enter="fetchWeather"
-              >
+              <q-input v-model="location" outlined placeholder="Ketik disini dong!" class="input-field" @keyup.enter="fetchWeather">
                 <template v-slot:append>
                   <q-btn label="Cari" color="pink" @click="fetchWeather" />
                 </template>
@@ -77,22 +56,30 @@
           </q-card>
 
           <q-card class="q-pa-sm glass-card flex-grow description-card" style="font-family: 'Arial', sans-serif; background-color: #FFD0D0;">
-  <q-card-section>
-    <div class="text-h6 text-center" style="color: #333;">
-      <h7 style="font-weight: 600; color: #402E7A;">Weather Type</h7>
-    </div>
-    
-<ul style="color: #333;">
-  <li><strong style="color: #ff4500;">Clear:</strong> The sky is clear without clouds, and the sunlight is bright.</li>
-  <li><strong style="color: #ffa500;">Cloudy:</strong> The sky is covered with clouds, but there is no rain.</li>
-  <li><strong style="color: #1e90ff;">Rain:</strong> Drops of water fall from the sky, with varying intensity.</li>
-  <li><strong style="color: #8b0000;">Storm:</strong> Extreme weather with strong winds, lightning, and heavy rain.</li>
-  <li><strong style="color: #4682b4;">Snow:</strong> Ice crystals fall from the sky, usually occurring in cold temperatures.</li>
-</ul>
-```
-  </q-card-section>
-</q-card>
+            <q-card-section class="animated-card" style="animation: moveLeftRight 5s linear infinite">
+              <div class="text-h6 text-center" style="color: #333;">
+                <h7 style="font-weight: 600; color: #402E7A;">Weather Type</h7>
+              </div>
 
+              <ul style="color: #333;">
+                <li><strong style="color: #ff4500;">Clear:</strong> The sky is clear without clouds, and the sunlight is bright.</li>
+                <li><strong style="color: #ffa500;">Cloudy:</strong> The sky is covered with clouds, but there is no rain.</li>
+                <li><strong style="color: #1e90ff;">Rain:</strong> Drops of water fall from the sky, with varying intensity.</li>
+                <li><strong style="color: #8b0000;">Storm:</strong> Extreme weather with strong winds, lightning, and heavy rain.</li>
+                <li><strong style="color: #4682b4;">Snow:</strong> Ice crystals fall from the sky, usually occurring in cold temperatures.</li>
+              </ul>
+            </q-card-section>
+          </q-card>
+        </div>
+
+        <!-- Social links -->
+        <div class="social-links">
+          <a href="https://www.instagram.com/aurorakaylaaa/?next=%2F" target="_blank" @click="animateIcon($event)">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-icon" />
+          </a>
+          <a href="https://github.com/aurorakaylasakinahsyah" target="_blank" @click="animateIcon($event)">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="social-icon" />
+          </a>
         </div>
       </q-page>
     </q-page-container>
@@ -162,6 +149,14 @@ export default {
       fetchWeather();
     });
 
+    // Animation function for social icons
+    const animateIcon = (event) => {
+      event.target.style.transform = 'scale(3.2)';
+      setTimeout(() => {
+        event.target.style.transform = 'scale(1)';
+      }, 200);
+    };
+
     return {
       location,
       weather,
@@ -169,6 +164,7 @@ export default {
       temperatureClass,
       currentTime,
       formattedCurrentTime,
+      animateIcon
     };
   },
 };
@@ -208,84 +204,95 @@ body {
   height: 100%;
   background-image: url('https://wallpaperaccess.com/full/3423617.jpg');
   background-size: cover;
-  background-position: center;
+  filter: blur(2px);
   z-index: -1;
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 40px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  transition: transform 0.2s;
-  padding: 8px; /* Adjusted padding for a more compact card */
-  width: 300px; /* Adjust width as needed */
-}
-
-.glass-card:hover {
-  transform: scale(0.99);
-}
-
-.description-card {
-  margin-left: 20px;
-}
-
-.text-white {
-  color: rgb(255, 255, 255);
-}
-
-.text-primary {
-  color: #00bcd4;
-}
-
-.input-field .q-field__control {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-  color: white;
-}
-
-.input-field .q-field__control:before,
-.input-field .q-field__control:after {
-  border-color: rgba(255, 159, 196, 0.3);
-}
-
-.input-field .q-input__inner {
-  color: white;
-}
-
-.weather-info {
-  margin-top: 10px; /* Adjusted margin for a more compact look */
-  animation: fadeIn 1s ease-in-out;
-}
-
-.current-time {
-  margin-left: auto;
-  padding-right: 20px;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.q-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
 }
 
 .weather-container {
   display: flex;
-  flex-direction: row;
-  position: relative;
-  bottom: 50px; /* Adjust distance from the bottom */
-  left: 20px; /* Adjust distance from the left */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+.glass-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 10px 8px rgba(188, 132, 173, 0.884);
+  width: 400px;
+  margin-bottom: 9px;
+  text-align: center;
+}
+
+.description-card {
+  width: 900px;
+}
+
+.input-field {
+  margin-bottom: 10px;
+}
+
+.social-links {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.social-links a {
+  margin: 0 10px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s;
+}
+
+/* Toolbar title animation */
+.toolbar-title {
+  animation: titleAnimation 3s infinite;
+}
+
+@keyframes titleAnimation {
+  0% {
+    transform: scale(1);
   }
-  to {
-    opacity: 1;
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.toolbar-title.text {
+  color: rgb(0, 0, 0); /* Mengubah warna teks menjadi hitam */
+}
+
+/* Style for bordered class */
+.bordered {
+  border: 2px solid #ffffff;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* Animation for glass card */
+.animated-card {
+  animation: rotate 20s linear infinite;
+}
+
+/* Animation for description card */
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 </style>
