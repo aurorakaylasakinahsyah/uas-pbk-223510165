@@ -1,48 +1,27 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import App from './App.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+import HomePage from '../views/HomePage.vue'
+import AboutPage from '../views/AboutPage.vue'
+import Tugas1 from '../components/Tugas1.vue'
+import Tugas2 from '../components/Tugas2.vue'
+import Tugas3 from '../components/Tugas3.vue'
+import Tugas4 from '../components/Tugas4.vue'
+import Tugas5 from '../components/Tugas5.vue'
+import Tugas6 from '../components/Tugas6.vue'
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: App,
-  },
-  {
-    path: '/tugas/1',
-    name: 'TugasPertemuan1',
-    beforeEnter() { location.href = "https://kayla-projectcv.netlify.app/"; }
-  },
-  {
-    path: '/tugas/2',
-    name: 'TugasPertemuan2',
-    beforeEnter() { location.href = "https://github.com/aurorakaylasakinahsyah/T2-PBK-Aurora"; }
-  },
-  {
-    path: '/tugas/3',
-    name: 'TugasPertemuan3',
-    beforeEnter() { location.href = "https://aurorakayla.netlify.app/"; }
-  },
-  {
-    path: '/tugas/4',
-    name: 'TugasPertemuan4',
-    beforeEnter() { location.href = "https://aurorakayla-sakinahsyah-t4-prakpbk.vercel.app/"; }
-  },
-  {
-    path: '/tugas/5',
-    name: 'TugasPertemuan5',
-    beforeEnter() { location.href = "https://t5-pbk-kayla.vercel.app/"; }
-  },
-  {
-    path: '/tugas/6',
-    name: 'TugasPertemuan6',
-    beforeEnter() { location.href = "https://comfy-bubblegum-3de90b.netlify.app/"; }
-  },
-  // Add more routes as needed
-];
+  { path: '/', component: HomePage },
+  { path: '/about', component: AboutPage },
+  { path: '/tugas1', component: Tugas1 },
+  { path: '/tugas2', component: Tugas2 },
+  { path: '/tugas3', component: Tugas3 },
+  { path: '/tugas4', component: Tugas4 },
+  { path: '/tugas5', component: Tugas5 },
+  { path: '/tugas6', component: Tugas6 },
+]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-});
+})
 
-export default router;
+export default router
